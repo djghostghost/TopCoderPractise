@@ -40,7 +40,7 @@ public class AB {
                 //the part before B become AABAA.....BBBBB
                 int countBinA=K%countA;
                 int remiderLength=N-countA-countB-1;
-                
+
                 return repeat("A",countBinA)+
                         repeat("B",1)+
                         repeat("A",countA-countBinA)+
