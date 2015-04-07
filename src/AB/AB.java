@@ -6,7 +6,8 @@ import com.sun.deploy.util.StringUtils;
  * Created by liguoxiang on 4/5/15.
  */
 public class AB {
-    private String createString(int N,int K){
+
+    public String createString(int N,int K){
 
         int maxString=0;
         //作られるパアスによる、作られるかを判断する
@@ -39,10 +40,14 @@ public class AB {
                 //if countBinA==2
                 //the part before B become AABAA.....BBBBB
                 int countBinA=K%countA;
-                int remiderLength=N-countA-countB-1;
 
-                return repeat("A",countBinA)+
-                        repeat("B",1)+
+                int remiderLength=N-countA-countB;
+                remiderLength=(countBinA==0)?remiderLength:(--remiderLength);
+
+                String resultStr=countBinA==0?"":repeat("A",countBinA)+repeat("B",1);
+
+
+                return  resultStr+
                         repeat("A",countA-countBinA)+
                         repeat("B",countB)+
                         //残りの部分でAで埋める
